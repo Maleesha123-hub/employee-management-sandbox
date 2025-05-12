@@ -1,0 +1,29 @@
+<u><h1 style="text-align: center">Employee management system</h1></u>
+<div style="padding-left: 500px; padding-right: 500px; padding-top: 50px">
+  <form [formGroup]="employeeForm">
+    <span>First Name: </span>
+    <input type="text" formControlName="firstName" /> <br /><br />
+    <span>Last Name: </span>
+    <input type="text" formControlName="lastName" /><br /><br />
+    <span>Department: </span>
+    <input type="text" formControlName="department" /><br /><br />
+    <span>Salary: </span>
+    <input type="number" formControlName="salary" /> &nbsp;
+    <button (click)="createEmployee()" style="cursor: pointer">Create</button>
+  </form>
+  <br /><br />
+  <table style="border-collapse: collapse; width: 100%">
+    <tr>
+      <th style="width: 300px; border: 1px solid black">Full Name</th>
+      <th style="width: 300px; border: 1px solid black">Department</th>
+      <th style="width: 300px; border: 1px solid black">Salary</th>
+    </tr>
+    <tr *ngFor="let emp of empList">
+      <td style="border: 1px solid black">
+        {{ emp.firstName }} {{ emp.lastName }}
+      </td>
+      <td style="border: 1px solid black">{{ emp.department }}</td>
+      <td style="border: 1px solid black">{{ emp.salary }}</td>
+    </tr>
+  </table>
+</div>
